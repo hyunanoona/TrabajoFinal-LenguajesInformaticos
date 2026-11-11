@@ -38,9 +38,11 @@ section {
 header {
     background-color: var(--color-primario);
     color: white;
-    padding: 25px 20px;
-    margin-bottom: 15px;
+    padding: 12px 15px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo h1 {
@@ -159,11 +161,10 @@ main {
 .caracteristicas-lista {
     list-style: none;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     margin-top: 20px;
-    text-align: left;
 }
 
 .caracteristicas-lista li {
@@ -171,6 +172,7 @@ main {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 250px;
 }
 
 .caracteristicas-lista li strong {
