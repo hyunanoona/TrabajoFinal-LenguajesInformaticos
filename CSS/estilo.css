@@ -1,4 +1,12 @@
-:root {
+/*selector universal*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Variables basicas*/
+:root { 
     --color-primario: crimson;
     --color-secundario: cadetblue;
     --color-terciario: darkslategray;
@@ -6,29 +14,339 @@
     --fuente-principal: 'Libre Caslon Condensed', serif;
 }
 
+/*css generico para todo el body*/
 body {
     font-family: var(--fuente-principal);
     font-size: 16px;
     max-width: 1100px; 
     margin: 0 auto;
+    line-height: 1.5;
+    background-color: #f4f4f4;
 }
 
+/*css generico para los párrafos y secciones*/
+p {
+    margin-bottom: 15px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+/*css para el encabezado y lo del loguito*/
 header {
     background-color: var(--color-primario);
     color: white;
-    padding: 20px;
+    padding: 25px 20px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
+.logo h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.logo p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/*css para la navegacion*/
+nav ul.navegacion {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: white;
+    color: var(--color-primario);
+}
+
+/*css para el contenido principal*/
 main {
     background-color: var(--color-fondo);
     color: var(--color-terciario);
     padding: 20px;
 }
 
+/* Para los botones */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: darkred;
+}
+
+/*css presentacion e historia*/
+#presentacion, #historia {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+
+#presentacion h2, #historia h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+#presentacion img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+/*css caracteristicas y artículos internos */
+#caracteristicas, #barrios, #comunidad {
+    text-align: center;
+}
+
+#caracteristicas h2, #barrios h2, #comunidad h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#caracteristicas article, #barrios article, #comunidad article, .lugar {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#caracteristicas article img, #barrios article img, .lugar img {
+    border-radius: 5px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caracteristicas-lista {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.caracteristicas-lista li {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.caracteristicas-lista li strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--color-terciario);
+    font-size: 1.2em;
+}
+
+/*css lugares*/
+#lugares {
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+
+.lugares-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.lugares-info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.lugares-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lugares-lista li {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lugares-lista li strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--color-terciario);
+    font-size: 1.1em;
+}
+
+/*css eventos*/
+#eventos {
+    text-align: center;
+}
+
+#eventos h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#eventos ol {
+    list-style-position: inside;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#eventos ol li {
+    background-color: white;
+    padding: 20px;
+    border-left: 5px solid var(--color-secundario);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#eventos ol li strong {
+    color: var(--color-terciario);
+    font-size: 1.15em;
+}
+
+/*css pasa los dl (se usan en ciudad)*/
+#datos-clave {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+#datos-clave dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 20px;
+}
+
+#datos-clave dt {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+#datos-clave dd {
+    margin: 0;
+}
+
+/*css para costumbres*/
+#costumbres ul {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#costumbres li {
+    margin-bottom: 10px;
+}
+
+/*css para el aside de novedades*/
+#novedades {
+    background-color: var(--color-terciario);
+    color: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border-left: 8px solid var(--color-primario);
+}
+
+#novedades h2 {
+    color: var(--color-secundario);
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+#novedades article h3 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+#novedades a {
+    color: #ffd700;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#novedades a:hover {
+    color: white;
+}
+
+/*css para el formulario y mapa de contacto*/
+/*tdv no lo hice*/
+
+/*css para el pie de página*/
 footer {
     background-color: var(--color-secundario);
     color: white;
-    padding: 10px;
+    padding: 20px;
+    margin-top: 15px;
     text-align: center;
+}
+
+.footer-ciudad {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.footer-boton {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
