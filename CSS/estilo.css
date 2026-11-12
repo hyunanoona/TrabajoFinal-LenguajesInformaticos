@@ -34,6 +34,10 @@ section {
     padding: 20px;
 }
 
+section[id] {
+    scroll-margin-top: 160px; 
+}
+
 /*css para el header y navbar (contenedores principales)*/
 header, .navbar {
     background-color: var(--color-primario);
@@ -68,7 +72,7 @@ nav ul.navegacion {
     border-top: 1px solid white;
 }
 
-/**/
+
 nav a {
     text-decoration: none;
     color: white !important;
@@ -324,13 +328,13 @@ main {
     font-size: 1.3em;
 }
 
-#novedades a {
-    color: #ffd700;
+#novedades p a {
+    color: var(--color-secundario);
     font-weight: bold;
     text-decoration: underline;
 }
 
-#novedades a:hover {
+#novedades p a:hover {
     color: white;
 }
 
